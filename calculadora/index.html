@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 class="titulo">Calculadora de juros compostos</h1>
-    <main id="calculadora de juros compostos">
+<main id="calculadora de juros compostos">
     <div>
         <label>Capital:</label>
         <input
@@ -33,7 +33,20 @@
             placeholder="Digite a quantidade de meses">
         </input>
     </div>
-        <button id="calculate">Calcular</button>     
+     <button id="calculate">Calcular</button>  
+        <script>
+            document.getElementById('calculate').addEventListener('click', function(){
+
+const capital = document.getElementById('capital').value;
+const taxa = document.getElementById('taxa').value / 100;
+const meses = document.getElementById('meses').value;
+
+const montante = capital * (1 + taxa)**meses;
+
+document.getElementById('montante').innerHTML = ("R$" + montante.toFixed(2));
+
+});
+        </script>   
 </main>
     <p>Montante: <span id="montante">R$0,00</span></p>
     <link rel="stylesheet" href="style.css"/>  
